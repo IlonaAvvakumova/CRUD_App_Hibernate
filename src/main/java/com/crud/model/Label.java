@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table (name ="labels", schema="flyway_db")
 public class Label {
     @Id
+  /*  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "article_gen")
+    @SequenceGenerator(name="article_gen", sequenceName="article_seq")*/
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;

@@ -7,6 +7,8 @@ import java.util.List;
 @Table(name = "posts", schema="flyway_db")
 public class Post {
     @Id
+    /*@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "article_gen")
+    @SequenceGenerator(name="article_gen", sequenceName="article_seq")*/
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String content;
@@ -15,7 +17,7 @@ public class Post {
     private PostStatus status;
 
    @OneToMany(cascade = CascadeType.ALL)
-       private List<Label> labels;
+       private List<Label> labelList;
 
    @ManyToOne(fetch = FetchType.LAZY)
       private Writer writer;
@@ -24,12 +26,12 @@ public class Post {
     public Post() {
     }
 
-    public Post(String content, long updated, long created, PostStatus status, List<Label> labels, Writer writer) {
+    public Post(String content, long updated, long created, PostStatus status, List<Label> labelList, Writer writer) {
         this.content = content;
         this.updated = updated;
         this.created = created;
         this.status = status;
-        this.labels = labels;
+        this.labelList = labelList;
         this.writer = writer;
     }
 
@@ -70,12 +72,12 @@ public class Post {
         this.status = status;
     }
 
-    public List<Label> getLabels() {
-        return labels;
+    public List<Label> getLabelList() {
+        return labelList;
     }
 
-    public void setLabels(List<Label> labels) {
-        this.labels = labels;
+    public void setLabelList(List<Label> labelList) {
+        this.labelList = labelList;
     }
 
     public Writer getWriter() {
@@ -94,7 +96,7 @@ public class Post {
                 ", updated=" + updated +
                 ", created=" + created +
                 ", status=" + status +
-                ", labels=" + labels +
+                ", labels=" + labelList +
                 ", writer=" + writer +
                 '}';
     }

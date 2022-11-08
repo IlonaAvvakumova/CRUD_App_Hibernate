@@ -7,6 +7,8 @@ import javax.persistence.*;
 @Table(name = "writers", schema="flyway_db")
 public class Writer {
     @Id
+   /* @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "article_gen")
+    @SequenceGenerator(name="article_gen", sequenceName="article_seq")*/
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
