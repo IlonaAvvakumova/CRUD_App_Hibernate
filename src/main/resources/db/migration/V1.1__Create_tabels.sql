@@ -2,7 +2,7 @@ create TABLE labels(
     id  SERIAL PRIMARY KEY ,
     name VARCHAR(50)
        );
-/*
+
  create TABLE writers(
     id  SERIAL PRIMARY KEY ,
     first_name VARCHAR(50),
@@ -20,9 +20,8 @@ create TABLE posts(
     FOREIGN KEY (writer_id)  REFERENCES writers (id)
     );
 
-create TABLE post_labels(
+/*create TABLE post_labels(
 post_id INT,
 label_id INT,
    FOREIGN KEY (post_id)  REFERENCES posts (id),
-   FOREIGN KEY (label_id)  REFERENCES labels (id)
-       );*/
+   FOREIGN KEY (label_id)  REFERENCES labels (id));*/

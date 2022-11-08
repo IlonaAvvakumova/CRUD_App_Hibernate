@@ -3,15 +3,15 @@ package com.crud.model;
 import java.util.List;
 import javax.persistence.*;
 
-//@Entity
-//@Table(name = "writers")
+@Entity
+@Table(name = "writers", schema="flyway_db")
 public class Writer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastName;
-   // @OneToMany(mappedBy = "writers", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany/*(mappedBy = "writer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)*/
     private List<Post> posts;
 
 

@@ -20,9 +20,9 @@ public class HibernateSessionFactoryUtil {
         if (sessionFactory == null) {
             try {
                 sessionFactory = new Configuration()
-                        .configure("hibernate.cfg.xml").addAnnotatedClass(Label.class).
-                        /*.addAnnotatedClass(Post.class)
-                        .addAnnotatedClass(Writer.class).*/buildSessionFactory();
+                        .configure("hibernate.cfg.xml").addAnnotatedClass(Label.class)
+                        .addAnnotatedClass(Post.class)
+                        .addAnnotatedClass(Writer.class).buildSessionFactory();
 
                           } catch (Exception e) {
                 System.out.println("Исключение!" + e);

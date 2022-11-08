@@ -3,18 +3,15 @@ package com.crud.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "labels")
+@Table (name ="labels", schema="flyway_db")
 public class Label {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "name")
     private String name;
-
 
     public Label() {
     }
-
     public Label(String name) {
         this.name = name;
     }

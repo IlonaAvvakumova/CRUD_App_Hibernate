@@ -15,10 +15,10 @@ public class AppRunner {
     public static void main(String[] args) {
 
 
-         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Label label1 = new Label("privet");
         Label label2 = new Label("poka");
-       /* List<Label> labelList = new ArrayList<>();
+        List<Label> labelList = new ArrayList<>();
         labelList.add(label1);
         labelList.add(label2);
         Writer writer = new Writer();
@@ -29,11 +29,16 @@ public class AppRunner {
         postList.add(post2);
         writer.setFirstName("Sasha");
         writer.setLastName("Pupkin");
-        writer.setPosts(postList);*/
+        writer.setPosts(postList);
         Transaction tx1 = session.beginTransaction();
 
+        session.save(post1);
+        session.save(post2);
         session.save(label1);
         session.save(label2);
+        session.save(writer);
+
+
         tx1.commit();
         session.close();
     }

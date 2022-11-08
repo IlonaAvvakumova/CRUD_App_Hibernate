@@ -3,8 +3,8 @@ package com.crud.model;
 import javax.persistence.*;
 import java.util.List;
 
-//@Entity
-//@Table(name = "posts")
+@Entity
+@Table(name = "posts", schema="flyway_db")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,14 +14,13 @@ public class Post {
     private long created;
     private PostStatus status;
 
-   // @OneToMany(mappedBy = "post_labels", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<Label> labels;
+   @OneToMany(cascade = CascadeType.ALL)
+       private List<Label> labels;
 
-  //  @ManyToOne(fetch = FetchType.LAZY)
-  //  @JoinColumn(name = "writer_id")
-    private Writer writer;
+   @ManyToOne(fetch = FetchType.LAZY)
+      private Writer writer;
 
-    /* <mapping class="beans.Task"/>*/
+
     public Post() {
     }
 
