@@ -1,15 +1,38 @@
 package com.crud.model;
 
+import javax.persistence.*;
 import java.util.List;
 
+//@Entity
+//@Table(name = "posts")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String content;
     private long updated;
     private long created;
     private PostStatus status;
+
+   // @OneToMany(mappedBy = "post_labels", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Label> labels;
+
+  //  @ManyToOne(fetch = FetchType.LAZY)
+  //  @JoinColumn(name = "writer_id")
     private Writer writer;
+
+    /* <mapping class="beans.Task"/>*/
+    public Post() {
+    }
+
+    public Post(String content, long updated, long created, PostStatus status, List<Label> labels, Writer writer) {
+        this.content = content;
+        this.updated = updated;
+        this.created = created;
+        this.status = status;
+        this.labels = labels;
+        this.writer = writer;
+    }
 
     public Integer getId() {
         return id;

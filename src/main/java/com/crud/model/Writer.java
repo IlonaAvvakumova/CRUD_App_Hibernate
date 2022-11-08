@@ -1,12 +1,28 @@
 package com.crud.model;
 
 import java.util.List;
+import javax.persistence.*;
 
+//@Entity
+//@Table(name = "writers")
 public class Writer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastName;
+   // @OneToMany(mappedBy = "writers", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Post> posts;
+
+
+    public Writer() {
+    }
+
+    public Writer(String firstName, String lastName, List<Post> posts) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.posts = posts;
+    }
 
     public Integer getId() {
         return id;

@@ -1,6 +1,9 @@
 package com.crud.utils;
 
 
+import com.crud.model.Label;
+import com.crud.model.Post;
+import com.crud.model.Writer;
 import com.crud.repository.Hibernate.HiberLabelRepository;
 import com.crud.repository.Hibernate.HiberPostRepository;
 import com.crud.repository.Hibernate.HiberWriterRepository;
@@ -17,9 +20,9 @@ public class HibernateSessionFactoryUtil {
         if (sessionFactory == null) {
             try {
                 sessionFactory = new Configuration()
-                        .configure("hibernate.cfg.xml").addAnnotatedClass(HiberLabelRepository.class)
-                        .addAnnotatedClass(HiberPostRepository.class)
-                        .addAnnotatedClass(HiberWriterRepository.class).buildSessionFactory();
+                        .configure("hibernate.cfg.xml").addAnnotatedClass(Label.class).
+                        /*.addAnnotatedClass(Post.class)
+                        .addAnnotatedClass(Writer.class).*/buildSessionFactory();
 
                           } catch (Exception e) {
                 System.out.println("Исключение!" + e);
