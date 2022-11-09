@@ -16,26 +16,26 @@ public class WriterService {
     }
 
     public List<Writer> getAll() {
-        return null;
+        return writerRepository.getAll();
     }
 
 
     public Writer getById(Integer integer) {
-        return null;
+        return writerRepository.getById(integer);
     }
 
 
     public Writer create(Writer writer) {
-        return null;
+        return writerRepository.create(writer);
     }
 
 
     public Writer update(Writer writer) {
-        return null;
+        return writerRepository.update(writer);
     }
 
 
     public void deleteById(Integer id) {
-
+writerRepository.deleteById(id);
     }
 }

@@ -14,26 +14,27 @@ public class PostService {
         this.postRepository = new HiberPostRepository();
     }
     public List<Post> getAll() {
-        return null;
+        return postRepository.getAll();
     }
 
 
     public Post getById(Integer integer) {
-        return null;
+        return postRepository.getById(integer);
     }
 
 
     public Post create(Post post) {
-        return null;
+        return postRepository.create(post);
     }
 
 
     public Post update(Post post) {
-        return null;
+        return postRepository.update(post);
     }
 
 
     public void deleteById(Integer id) {
+        postRepository.deleteById(id);
 
     }
 

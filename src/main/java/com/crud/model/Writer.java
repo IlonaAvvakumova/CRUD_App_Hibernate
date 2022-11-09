@@ -7,29 +7,27 @@ import javax.persistence.*;
 @Table(name = "writers", schema="flyway_db")
 public class Writer {
     @Id
-   /* @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "article_gen")
-    @SequenceGenerator(name="article_gen", sequenceName="article_seq")*/
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastName;
-    @OneToMany/*(mappedBy = "writer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)*/
+    @OneToMany(mappedBy = "writer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Post> posts;
-
 
     public Writer() {
     }
-
     public Writer(String firstName, String lastName, List<Post> posts) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.posts = posts;
     }
-
     public Integer getId() {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -61,7 +59,7 @@ public class Writer {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", posts=" + posts +
+                /*", posts=" + posts +*/
                 '}';
     }
 }

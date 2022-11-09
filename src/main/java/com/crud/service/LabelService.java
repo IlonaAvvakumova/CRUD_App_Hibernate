@@ -15,28 +15,27 @@ public class LabelService {
     }
 
 
-
     public List<Label> getAll() {
-        return null;
+        return labelRepository.getAll();
     }
 
 
-    public Label getById(Integer integer) {
-        return null;
+    public Label getById(Integer id) {
+        return labelRepository.getById(id);
     }
 
 
     public Label create(Label label) {
-        return null;
+        return labelRepository.create(label);
     }
 
 
     public Label update(Label label) {
-        return null;
+        return labelRepository.update(label);
     }
 
 
     public void deleteById(Integer id) {
-
+        labelRepository.deleteById(id);
     }
 }

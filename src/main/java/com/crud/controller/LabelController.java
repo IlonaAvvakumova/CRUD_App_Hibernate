@@ -10,27 +10,32 @@ public class LabelController {
  private final   LabelService labelService = new LabelService();
 
  public List<Label> getAll() {
-  return null;
+  return labelService.getAll();
  }
 
 
  public Label getById(Integer integer) {
-  return null;
+  return labelService.getById(integer);
  }
 
 
- public Label create(Label label) {
-  return null;
+ public Label create(String name) {
+  Label label = new Label();
+  label.setName(name);
+  return labelService.create(label);
  }
 
 
- public Label update(Label label) {
-  return null;
+ public Label update(Integer id, String name) {
+  Label label = new Label();
+  label.setId(id);
+  label.setName(name);
+  return labelService.update(label);
  }
 
 
  public void deleteById(Integer id) {
-
+labelService.deleteById(id);
  }
 
 }

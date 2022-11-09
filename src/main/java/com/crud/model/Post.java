@@ -7,8 +7,7 @@ import java.util.List;
 @Table(name = "posts", schema="flyway_db")
 public class Post {
     @Id
-    /*@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "article_gen")
-    @SequenceGenerator(name="article_gen", sequenceName="article_seq")*/
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String content;
@@ -16,12 +15,15 @@ public class Post {
     private long created;
     private PostStatus status;
 
-   @OneToMany(cascade = CascadeType.ALL)
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @ManyToMany(cascade = CascadeType.ALL)
        private List<Label> labelList;
 
    @ManyToOne(fetch = FetchType.LAZY)
       private Writer writer;
-
 
     public Post() {
     }
@@ -38,7 +40,6 @@ public class Post {
     public Integer getId() {
         return id;
     }
-
 
     public String getContent() {
         return content;

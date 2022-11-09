@@ -6,8 +6,6 @@ import javax.persistence.*;
 @Table (name ="labels", schema="flyway_db")
 public class Label {
     @Id
-  /*  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "article_gen")
-    @SequenceGenerator(name="article_gen", sequenceName="article_seq")*/
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
@@ -16,6 +14,10 @@ public class Label {
     }
     public Label(String name) {
         this.name = name;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getId() {
