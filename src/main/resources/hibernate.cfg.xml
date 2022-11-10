@@ -6,13 +6,13 @@
 <hibernate-configuration>
 <session-factory>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property> <!-- DB Driver -->
-    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres/flyway_db</property> <!-- BD Mane -->
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property> <!-- BD Mane -->
     <property name="hibernate.default_schema">flyway_db</property>
     <property name="hibernate.connection.username">postgres</property> <!-- DB User -->
     <property name="hibernate.connection.password">159753</property> <!-- DB Password -->
 
-    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property> <!-- DB Dialect -->
-    <property name="hibernate.hbm2ddl.auto">create-drop</property> <!-- create / create-drop / update -->
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property> <!-- DB Dialect -->
+    <property name="hibernate.hbm2ddl.auto">update</property> <!-- create / create-drop / update -->
 
     <property name="show_sql">true</property> <!-- Show SQL in console -->
     <property name="format_sql">true</property> <!-- Show SQL formatted -->

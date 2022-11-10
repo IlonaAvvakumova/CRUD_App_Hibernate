@@ -20,9 +20,8 @@ public class PostView {
 
     long time = LocalDateTime.now().getNano() * 1000L;
     public void getAll() {
-        System.out.println("Все posts:\n");
         List<Post> postsList = controller.getAll();
-        System.out.println(postsList);
+        System.out.println( "Все posts:\n" + postsList);
     }
 
 

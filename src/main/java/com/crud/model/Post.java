@@ -19,10 +19,10 @@ public class Post {
         this.id = id;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
        private List<Label> labelList;
 
-   @ManyToOne(fetch = FetchType.LAZY)
+   @ManyToOne(fetch = FetchType.EAGER)
       private Writer writer;
 
     public Post() {
@@ -98,7 +98,7 @@ public class Post {
                 ", created=" + created +
                 ", status=" + status +
                 ", labels=" + labelList +
-                ", writer=" + writer +
+                /*", writer=" + writer +*/
                 '}';
     }
 }
