@@ -12,7 +12,7 @@ public class HiberLabelRepository implements LabelRepository {
     @Override
     public List<Label> getAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        List<Label> from_labels  =  (List<Label>)  session.createQuery("From Label").list();
+        List<Label> from_labels = (List<Label>) session.createQuery("From Label").list();
         session.close();
         return from_labels;
     }
@@ -20,7 +20,7 @@ public class HiberLabelRepository implements LabelRepository {
     @Override
     public Label getById(Integer id) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Label label =  session.get(Label.class, id);
+        Label label = session.get(Label.class, id);
         session.close();
         return label;
     }
@@ -29,7 +29,7 @@ public class HiberLabelRepository implements LabelRepository {
     public Label create(Label label) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-         session.save(label);
+        session.save(label);
         tx1.commit();
         session.close();
         return label;

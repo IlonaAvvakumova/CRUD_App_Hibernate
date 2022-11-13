@@ -9,6 +9,9 @@ import java.util.List;
 public class LabelService {
     LabelRepository labelRepository;
 
+    public LabelService(LabelRepository labelRepository) {
+        this.labelRepository = labelRepository;
+    }
 
     public LabelService() {
         this.labelRepository = new HiberLabelRepository();

@@ -7,12 +7,12 @@ import java.util.List;
 @Table(name = "posts", schema="flyway_db")
 public class Post {
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String content;
     private long updated;
     private long created;
+    @Enumerated(EnumType.STRING)
     private PostStatus status;
 
     public void setId(Integer id) {
