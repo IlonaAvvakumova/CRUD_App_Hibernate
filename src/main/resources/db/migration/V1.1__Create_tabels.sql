@@ -27,8 +27,8 @@ labellist_id INT,
    FOREIGN KEY (post_id)  REFERENCES posts (id),
    FOREIGN KEY (labellist_id)  REFERENCES labels (id));
 
-   create TABLE writers_posts(
+ /*  create TABLE writers_posts(
 writer_id INT,
 posts_id INT,
    FOREIGN KEY (writer_id)  REFERENCES writers (id),
-   FOREIGN KEY (posts_id)  REFERENCES posts (id));
+   FOREIGN KEY (posts_id)  REFERENCES posts (id));*/
