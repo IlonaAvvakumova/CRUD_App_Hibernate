@@ -22,7 +22,7 @@ public class Post {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
        private List<Label> labelList;
 
-   @ManyToOne(fetch = FetchType.EAGER)
+   @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
       private Writer writer;
 
     public Post() {
