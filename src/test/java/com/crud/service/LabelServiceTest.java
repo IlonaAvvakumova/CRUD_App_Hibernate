@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 class LabelServiceTest {
@@ -50,6 +51,7 @@ class LabelServiceTest {
 
     @Test
     void deleteById() {
-
+       LabelService labelService2 = Mockito.mock(LabelService.class);
+        doNothing().when(labelService2).deleteById(1);
     }
 }

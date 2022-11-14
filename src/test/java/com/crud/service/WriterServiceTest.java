@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 class WriterServiceTest {
@@ -47,5 +48,7 @@ class WriterServiceTest {
 
     @Test
     void deleteById() {
+       WriterService writerService2 = Mockito.mock(WriterService.class);
+            doNothing().when(writerService2).deleteById(1);
     }
 }

@@ -1,10 +1,7 @@
 package com.crud.service;
 
-import com.crud.model.Label;
 import com.crud.model.Post;
-import com.crud.model.Writer;
 import com.crud.repository.PostRepository;
-import com.crud.repository.WriterRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -12,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 class PostServiceTest {
@@ -50,5 +48,7 @@ class PostServiceTest {
 
     @Test
     void deleteById() {
+        PostService postService2 = Mockito.mock(PostService.class);
+        doNothing().when(postService2).deleteById(1);
     }
 }

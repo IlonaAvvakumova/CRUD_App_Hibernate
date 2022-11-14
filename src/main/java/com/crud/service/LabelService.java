@@ -11,6 +11,7 @@ public class LabelService {
 
     public LabelService(LabelRepository labelRepository) {
         this.labelRepository = labelRepository;
+
     }
 
     public LabelService() {

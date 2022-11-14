@@ -37,5 +37,6 @@ public class WriterService {
 
     public void deleteById(Integer id) {
 writerRepository.deleteById(id);
+
     }
 }
